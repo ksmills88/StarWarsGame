@@ -1,4 +1,9 @@
 body {
     background-image: url("../images/background1.jpg");
     background-size: 1000px;
+    font-family: 'Ubuntu', sans-serif;
+    color: chartreuse
+}
+.imagearea {
+    height: 150px;
 }
