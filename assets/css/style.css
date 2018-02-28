@@ -2,8 +2,13 @@ body {
     background-image: url("../images/background1.jpg");
     background-size: 1000px;
     font-family: 'Ubuntu', sans-serif;
-    color: chartreuse
+    color: chartreuse;
+    text-align: center;
 }
 .imagearea {
     height: 150px;
+}
+.char-box {
+    border: 2px solid chartreuse;
+    
 }

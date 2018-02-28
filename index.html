@@ -14,14 +14,35 @@
 <body>
     <div class="container-fluid">
         <h1>Star Wars RPG!</h1>
-        <div id="start-character"></div>
-        <h2>Your Character</h2>
+        <div id="start-character" class="row">
+            <div id="obiBox" class ="char-box col-sm">
+                <h5>Obi-Wan Kenobi</h5>
+                <img src = "assets/images/obi.jpg" alt = "Obi-Wan Kenobi">
+                <p id ="obiLives"></p>
+            </div>
+            <div id="lukeBox" class ="char-box col-sm">
+                <h5>Luke Skywalker</h5>
+                <img src = "assets/images/luke.jpg" alt = "Luke Skywalker">
+                <p id ="lukeLives"></p>
+            </div>
+            <div id="sidiousBox" class ="char-box col-sm">
+                <h5>Darth Sidious</h5>
+                <img src = "assets/images/darthsidious.jpg" alt = "Darth Sidious">
+                <p id ="sidiousLives"></p>
+            </div>
+            <div id="maulBox" class ="char-box col-sm">
+                <h5>Darth Maul</h5>
+                <img src = "assets/images/darthmaul.jpg" alt = "Darth Maul">
+                <p id ="maulLives"></p>
+            </div>
+        </div>
+        <h3>Your Character</h3>
         <div class="imagearea" id="chosen-character"></div>
-        <h2>Enemies Available to Attack</h2>
+        <h3>Enemies Available to Attack</h3>
         <div class="imagearea" id="enemies"></div>
-        <h2>Fight Section</h2>
+        <h3>Fight Section</h3>
         <button type="button">Attack</button>
-        <h2>Defender</h2>
+        <h3>Defender</h3>
         <div class="imagearea" id="defender"></div>
         <div id="comment"></div>
         <button type="button" id="button">Restart</button>
