@@ -15,12 +15,35 @@
     <div class="container-fluid">
         <h1>Star Wars RPG!</h1>
         <div id="start-character" class="row">
-            <div id="obiBox" class ="char-box col-sm">
+            <div type="button" id="charImage" class="char1" characterName='obi wan kanobi' health='120' attack='8' counterAttack="15">
+                <h3>Obi-Wan</h3>
+                <img class="charImage" src="assets/images/obi.jpg">
+                <p>120</p>
+            </div>
+            <div type="button" id="charImage" class="char2" characterName='Luke Skywalker' health='100' attack='8' counterAttack="5">
+                <h3>Luke Skywalker</h3>
+                <img class="charImage" src="assets/images/luke.jpg">
+                <p>100</p>
+            </div>
+            <div type="button" id="charImage"class="char3" characterName='Darth Sidious' health='150' attack='8' counterAttack=" 20">
+                <h3>Darth Sidious</h3>
+                <img class="charImage" src="assets/images/darthsidious.jpg">
+                <p>150</p>
+            </div>
+            <div type="button" id="charImage" class="char4" characterName='Darth Maul' health='180' attack='8' counterAttack=" 25">
+                <h3>Darth Maul</h3>
+                <img class="charImage" src="assets/images/darthmaul.jpg">
+                <p>180</p>
+            </div>
+
+            
+            
+            <!-- <div id="obiBox" class ="char-box col-sm">
                 <h5>Obi-Wan Kenobi</h5>
                 <img src = "assets/images/obi.jpg" alt = "Obi-Wan Kenobi">
                 <p id ="obiLives"></p>
-            </div>
-            <div id="lukeBox" class ="char-box col-sm">
+            </div>             
+                 <div id="lukeBox" class ="char-box col-sm">
                 <h5>Luke Skywalker</h5>
                 <img src = "assets/images/luke.jpg" alt = "Luke Skywalker">
                 <p id ="lukeLives"></p>
@@ -34,21 +57,24 @@
                 <h5>Darth Maul</h5>
                 <img src = "assets/images/darthmaul.jpg" alt = "Darth Maul">
                 <p id ="maulLives"></p>
-            </div>
+            </div> -->
         </div>
         <h3>Your Character</h3>
-        <div class="imagearea" id="chosen-character"></div>
+        <div class="imagearea row" id="chosen-character"></div>
         <h3>Enemies Available to Attack</h3>
-        <div class="imagearea" id="enemies"></div>
+        <div class="imagearea row" id="enemies"></div>
         <h3>Fight Section</h3>
         <button type="button">Attack</button>
         <h3>Defender</h3>
-        <div class="imagearea" id="defender"></div>
+        <div class="imagearea row" id="defender"></div>
         <div id="comment"></div>
         <button type="button" id="button">Restart</button>
 
     </div>
-    
+<script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
 <script type="text/javascript" src="assets/javascript/game.js"></script>    
 </body>
 </html>
