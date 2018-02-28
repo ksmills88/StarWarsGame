@@ -71,6 +71,7 @@
 
 
 $(document).ready(function(){
+    
 
     var test = true;
     var char1Count = true;
@@ -91,7 +92,9 @@ $(document).ready(function(){
             {
                 $(this).addClass("main");
                 obiCount++;
+                char1Count = false;
                 //This will move the other 3 characters to their appended to divs
+                
                 $(".char2").appendTo("#enemies");
                 $(".char3").appendTo("#enemies");
                 $(".char4").appendTo("#enemies");
@@ -112,6 +115,7 @@ $(document).ready(function(){
                 $(this).addClass("main");
                 lukeCount++;
                 char1Count = false;
+                
                 $(".char1").appendTo("#enemies");
                 $(".char3").appendTo("#enemies");
                 $(".char4").appendTo("#enemies");
@@ -133,6 +137,7 @@ $(document).ready(function(){
                 $(this).addClass("main");
                 sidCount++;
                 char1Count = false;
+                
                 $(".char1").appendTo("#enemies");
                 $(".char2").appendTo("#enemies");
                 $(".char4").appendTo("#enemies");
@@ -152,9 +157,10 @@ $(document).ready(function(){
                 $(this).addClass("main");
                 maulCount++;
                 char1Count = false;
+                
                 $(".char1").appendTo("#enemies");
                 $(".char2").appendTo("#enemies");
-                $(".char4").appendTo("#enemies");  
+                $(".char3").appendTo("#enemies");  
             }
             else if (char1Count === false && maulCount === 0)
             {
@@ -162,11 +168,15 @@ $(document).ready(function(){
                 lukeCount++;
                 sidCount++;
                 obiCount++;
-                $(".char3").appendTo("#defender").addClass("def");
+                $(".char4").appendTo("#defender").addClass("def");
             }
         });
 
+        //Attack actions go here ------------------------//
 
 
 
+        
 });
+
+alert("Choose Your Character to get started!")
