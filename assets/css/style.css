@@ -13,6 +13,7 @@ body {
     width: 200px;
     color: black;
     text-align: center;
+    margin-left: 10px;
 }
 #charImage:hover {
     color: blue;
@@ -20,12 +21,12 @@ body {
 }
 button {
     font-size: 24px;
-    margin: 10px;
+    
     padding-right: 20px;
     padding-left: 20px;
     background-color: magenta;
     font-weight: bold;
-    border: 3px solid black;
+    border: 3px solid chartreuse;
 }
 button:hover {
     background-color: rgb(255,0,85);
