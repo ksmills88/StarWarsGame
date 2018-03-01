@@ -138,13 +138,15 @@ console.log(attackMain);
                 $('#start-character').prepend($('<img>', {src:"assets/images/yoda3.jpg"}));
                 $(".yourCharacter").html("<h2>" + "You Lost" + "</h3>").css({'color': 'red', 'font-size':'24px'});
                 this.disabled = true;
+                
+                console.log(healthDefenderAfter)
             }
             //As the defenders are defeated, they must disappear and a new enemy can be chosen. 
             //when they disappear, text will appear alerting the user that they have defeated "__" and to choose another enemy. 
             else if(healthDefenderAfter <=0)
             {
                 //If Obi dies
-                if($("def.char1").attr("health") <=0)
+                if($(".def.char1").attr("health") <=0)
                 {
                     maulCount--;
                     sidCount--;
@@ -154,7 +156,7 @@ console.log(attackMain);
                     countDefeated++;
                 }
                 //If Luke dies
-                else if($("def.char2").attr("health") <=0)
+                else if($(".def.char2").attr("health") <=0)
                 {
                     maulCount--;
                     sidCount--;
@@ -164,7 +166,7 @@ console.log(attackMain);
                     countDefeated++;
                 }
                 //If Darth Sid dies
-                else if($("def.char3").attr("health") <=0)
+                else if($(".def.char3").attr("health") <=0)
                 {
                     maulCount--;
                     lukeCount--;
@@ -174,7 +176,7 @@ console.log(attackMain);
                     countDefeated++;
                 }
                 //If Darth Maul dies
-                else if($("def.char4").attr("health") <=0)
+                else if($(".def.char4").attr("health") <=0)
                 {
                     lukeCount--;
                     sidCount--;
@@ -188,7 +190,9 @@ console.log(attackMain);
                 //end game functionality
                 if(countDefeated === 3)
                 {
+                    this.disabled = true;
                     $(".defender").html("<p>"+"YOU WON!"+"</p>").css({"font-size":"30px","color": "magenta"})
+                    $(".end").remove();
                 }
 
             }
