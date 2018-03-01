@@ -32,3 +32,15 @@ button:hover {
     background-color: rgb(255,0,85);
     border: 3px solid blue;
 }
+.rules {
+    text-align: center;
+}
+.rules-box {
+    border: 2px solid chartreuse;
+    margin-top: 20px;
+}
+.rules-text {
+    font-size: 18px;
+    padding: 20px;
+    text-align:justify;
+}
