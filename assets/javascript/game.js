@@ -1,75 +1,3 @@
-
-// var characters = [];
-// var obi = {
-//     "name": "Obi-Wan Kenobi",
-//     "healthPoint": 120,
-//     "attackPower": 8,
-//     "counterAttackPower": 12
-//   };
-// var luke = {
-//     "name": "Luke Skywalker",
-//     "healthPoint": 180,
-//     "attackPower": 8,
-//     "counterAttackPower": 12
-//   };
-// var maul = {
-//     "name": "Darth Maul",
-//     "healthPoint": 120,
-//     "attackPower": 8,
-//     "counterAttackPower": 12
-//   };
-// var sidious = {
-//     "name": "Darth Sidious",
-//     "healthPoint": 120,
-//     "attackPower": 8,
-//     "counterAttackPower": 12
-//   };
-// characters.push(obi, maul, luke, sidious);
-
-
-// var isCharChosen = false;
-// var attacker;
-// var defender;
-// var combatants = [];
-// var characters = {
-//     "obi": {
-//         "name": "Obi-Wan Kenobi",
-//         "healthPoint": 120,
-//         "attackPower": 8,
-//         "counterAttackPower": 12
-//     },
-//     "luke": {
-//         "name": "Luke Skywalker",
-//         "healthPoint": 180,
-//         "attackPower": 25,
-//         "counterAttackPower": 10
-//     },
-//     "maul": {
-//         "name": "Darth Maul",
-//         "healthPoint": 125,
-//         "attackPower": 5,
-//         "counterAttackPower": 50
-//     },
-//     "sidious": {
-//         "name": "Darth Sidious",
-//         "healthPoint": 200,
-//         "attackPower": 10,
-//         "counterAttackPower": 10
-//     }
-// }
-
-// for(var i=0; i<characters.length; i++) {
-//     console.log(characters[0].attackPower);
-// }
- 
-
-// console.log(characters)
-  
-// $("#start-character").on("click", function (){
-//   $("#start-character").empty();
-// });
-
-
 $(document).ready(function(){
     
 
@@ -175,8 +103,98 @@ $(document).ready(function(){
         //Attack actions go here ------------------------//
 
     $(".attackBtn").on("click", function(){
-        
-    })
+        if(disableBtn === false){
+            var charName = $(".def").attr("characterName");
+            var healthStart = $(".main").attr("health");
+            
+            var attackMain = $(".main").attr("attack");
+            
+            var healthDefender = $(".def").attr("health");
+            var counterAttack = $(".def").attr("counterAttack");
+            var healthStartAfter = healthStart - counterAttack;
+            var healthDefenderAfter = healthDefender - attackMain;
+            var healthMain1 = $(".main").attr("health", healthStartAfter);
+            var healthDefender1 = $(".def").attr("health", healthDefenderAfter);
+            
+console.log(attackMain);
+           
+            $(".main p").html($(".main").attr("health"));
+
+            $(".def p").html($(".def").attr("health"));
+            // shows message::::::
+            $(".defender").html("<p>" + "You attacked " + charName + " for " + attackMain + " damage "+
+                                charName + " attacked you back for " + counterAttack + " </p>");
+            attackMain = attackMain * 2;
+            
+            var attackMain1 = $(".main").attr("attack", attackMain);
+            
+            console.log(attackMain1)
+            //need else/if to determine lose/win/action. If "your character" runs out of health, game is over.
+            //Your character disappears and an image of darth appears
+            if(healthStartAfter <= 0)
+            {
+                $(".defender").html("<p>" + "GAME OVER! You have been defeated." + "</p>");
+                $(".main").remove();
+                $('#start-character').prepend($('<img>', {src:"assets/images/yoda3.jpg"}));
+                $(".yourCharacter").html("<h2>" + "You Lost" + "</h3>").css({'color': 'red', 'font-size':'24px'});
+                this.disabled = true;
+            }
+            //As the defenders are defeated, they must disappear and a new enemy can be chosen. 
+            //when they disappear, text will appear alerting the user that they have defeated "__" and to choose another enemy. 
+            else if(healthDefenderAfter <=0)
+            {
+                //If Obi dies
+                if($("def.char1").attr("health") <=0)
+                {
+                    maulCount--;
+                    sidCount--;
+                    lukeCount--;
+                    $(".def").remove();
+                    $(".defender").html("<p>" + "You have defeated " + charName +". Choose your next enemy.").css({"font-size": "18px", "color": "magenta"});
+                    countDefeated++;
+                }
+                //If Luke dies
+                else if($("def.char2").attr("health") <=0)
+                {
+                    maulCount--;
+                    sidCount--;
+                    obiCount--;
+                    $(".def").remove();
+                    $(".defender").html("<p>" + "You have defeated " + charName +". Choose your next enemy.").css({"font-size": "18px", "color": "magenta"});
+                    countDefeated++;
+                }
+                //If Darth Sid dies
+                else if($("def.char3").attr("health") <=0)
+                {
+                    maulCount--;
+                    lukeCount--;
+                    obiCount--;
+                    $(".def").remove();
+                    $(".defender").html("<p>" + "You have defeated " + charName +". Choose your next enemy.").css({"font-size": "18px", "color": "magenta"});
+                    countDefeated++;
+                }
+                //If Darth Maul dies
+                else if($("def.char4").attr("health") <=0)
+                {
+                    lukeCount--;
+                    sidCount--;
+                    obiCount--;
+                    $(".def").remove();
+                    $(".defender").html("<p>" + "You have defeated " + charName +". Choose your next enemy.").css({"font-size": "18px", "color": "magenta"});
+                    countDefeated++;
+                }
+
+                //Do not allow clicks after game is over
+                //end game functionality
+                if(countDefeated === 3)
+                {
+                    $(".defender").html("<p>"+"YOU WON!"+"</p>").css({"font-size":"30px","color": "magenta"})
+                }
+
+            }
+            
+        };
+    });
 
         
 });
