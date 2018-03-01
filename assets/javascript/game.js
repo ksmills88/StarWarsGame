@@ -174,9 +174,11 @@ $(document).ready(function(){
 
         //Attack actions go here ------------------------//
 
-
+    $(".attackBtn").on("click", function(){
+        
+    })
 
         
 });
 
-alert("Choose Your Character to get started!")
+
