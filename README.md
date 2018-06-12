@@ -1,4 +1,4 @@
-# week-4-game
+# StarWarsGame
 This is a Star Wars RPG Game
 
 The game is published at https://ksmills88.github.io/week-4-game/
